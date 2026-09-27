@@ -6,6 +6,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🌿 Dreamland Trip 2026</title>
 <style>
+const APPS_SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbw_V10i580yO79mF3qPGr_xL_0odhnWwuUcpLkS8lV6qMsmHu4r20C_7dm34txzgyM/exec";
+let selectedSeat=null, selectedPollOption="";
+ function submitForm(){
+ const name=document.getElementById("studentName").value.trim(),cls=document.getElementById("className").value;
+ if(!name){alert("Please enter your name.");return} if(!selectedSeat){alert("Please choose a bus seat.");return}
+ const snacks=Array.from(document.querySelectorAll(".snack:checked")).map(x=>x.value);
+ const activities=Array.from(document.querySelectorAll(".activityCheck:checked")).map(x=>x.value);
+ const result=document.getElementById("result");result.style.display="block";
+ result.innerHTML=`<h3>🎉 Trip Choices Saved!</h3>...`;
+}
 *{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(135deg,#e8fff0,#eef7ff);color:#173b2b;padding-bottom:40px}
 header{background:linear-gradient(135deg,#159957,#38ef7d);color:white;padding:35px 20px;text-align:center;border-radius:0 0 30px 30px}
 header h1{font-size:38px;margin:0 0 10px}.badge{display:inline-block;background:#ffffff33;padding:10px 16px;margin:5px;border-radius:20px;font-weight:bold}
@@ -131,8 +142,7 @@ function sendMessage(){
  else if(x.includes("class"))a="🏫 The planner has Class 8 F and Another Class, with space for about 25 students per class.";
  addMessage(a,"bot")},400);
 }
-const APPS_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbw_V10i580yO79mF3qPGr_xL_0odhnWwuUcpLkS8lV6qMsmHu4r20C_7dm34txzgyM/exec";
+
 </script>
 </body>
 </html>
