@@ -5,325 +5,360 @@
 
 <meta charset="UTF-8">
 
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0"
->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>🌿 Dreamland Trip 2026</title>
 
 <style>
 
-*{
-  box-sizing:border-box;
+* {
+  box-sizing: border-box;
 }
 
-body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:linear-gradient(135deg,#e8fff0,#eef7ff);
-  color:#173b2b;
-  padding-bottom:40px;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #e8fff0, #eef7ff);
+  color: #173b2b;
+  padding-bottom: 40px;
 }
 
-header{
-  background:linear-gradient(135deg,#159957,#38ef7d);
-  color:white;
-  padding:35px 20px;
-  text-align:center;
-  border-radius:0 0 30px 30px;
+
+/* HEADER */
+
+header {
+  background: linear-gradient(135deg, #159957, #38ef7d);
+  color: white;
+  padding: 35px 20px;
+  text-align: center;
+  border-radius: 0 0 30px 30px;
 }
 
-header h1{
-  font-size:38px;
-  margin:0 0 10px;
+header h1 {
+  font-size: 38px;
+  margin: 0 0 10px;
 }
 
-.badge{
-  display:inline-block;
-  background:#ffffff33;
-  padding:10px 16px;
-  margin:5px;
-  border-radius:20px;
-  font-weight:bold;
+.badge {
+  display: inline-block;
+  background: #ffffff33;
+  padding: 10px 16px;
+  margin: 5px;
+  border-radius: 20px;
+  font-weight: bold;
 }
 
-.container{
-  max-width:1100px;
-  margin:25px auto;
-  padding:0 15px;
+
+/* MAIN */
+
+.container {
+  max-width: 1100px;
+  margin: 25px auto;
+  padding: 0 15px;
 }
 
-.card{
-  background:white;
-  border-radius:20px;
-  padding:25px;
-  margin-bottom:22px;
-  box-shadow:0 8px 25px #00000014;
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  margin-bottom: 22px;
+  box-shadow: 0 8px 25px #00000014;
 }
 
-.card h2{
-  margin-top:0;
-  color:#117a45;
+.card h2 {
+  margin-top: 0;
+  color: #117a45;
 }
 
-.grid{
-  display:grid;
-  grid-template-columns:
-    repeat(auto-fit,minmax(210px,1fr));
-  gap:12px;
+
+/* INPUTS */
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 13px;
+  border: 2px solid #d8eee0;
+  border-radius: 10px;
+  margin-top: 8px;
+  font-size: 16px;
 }
 
-input[type=text],
-select{
-  width:100%;
-  padding:13px;
-  border:2px solid #d8eee0;
-  border-radius:10px;
-  margin-top:8px;
-  font-size:16px;
+
+/* OPTIONS */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(210px, 1fr)
+  );
+  gap: 12px;
 }
 
-.option{
-  border:2px solid #e1eee6;
-  border-radius:14px;
-  padding:13px;
-  cursor:pointer;
-  background:#fbfffc;
+.option {
+  border: 2px solid #e1eee6;
+  border-radius: 14px;
+  padding: 13px;
+  cursor: pointer;
+  background: #fbfffc;
+  transition: .2s;
 }
 
-.option input{
-  margin-right:8px;
+.option:hover {
+  border-color: #159957;
+  transform: translateY(-2px);
 }
 
-.bus{
-  background:#f4f8fa;
-  padding:22px;
-  border-radius:18px;
-  border:2px solid #dce8ed;
+.option input {
+  margin-right: 8px;
 }
 
-.bus-front{
-  text-align:center;
-  font-weight:bold;
-  background:#37474f;
-  color:white;
-  padding:10px;
-  border-radius:10px;
-  margin-bottom:20px;
+
+/* BUS */
+
+.bus {
+  background: #f4f8fa;
+  padding: 22px;
+  border-radius: 18px;
+  border: 2px solid #dce8ed;
 }
 
-.bus-row{
-  display:grid;
+.bus-front {
+  text-align: center;
+  font-weight: bold;
+  background: #37474f;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.bus-row {
+  display: grid;
   grid-template-columns:
     1fr 1fr 25px 1fr 1fr 1fr;
-  gap:7px;
-  margin-bottom:8px;
+  gap: 7px;
+  margin-bottom: 8px;
 }
 
-.seat{
-  padding:12px 5px;
-  background:#d9f8e5;
-  border:2px solid #5ac985;
-  border-radius:8px;
-  text-align:center;
-  cursor:pointer;
-  font-weight:bold;
+.seat {
+  padding: 12px 5px;
+  background: #d9f8e5;
+  border: 2px solid #5ac985;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  transition: .2s;
 }
 
-.seat.selected{
-  background:#159957;
-  color:white;
+.seat:hover {
+  transform: scale(1.05);
 }
 
-.seat.booked{
-  background:#bdbdbd;
-  color:white;
-  border-color:#888;
-  cursor:not-allowed;
+.seat.selected {
+  background: #159957;
+  color: white;
+  border-color: #117a45;
 }
 
-.aisle{
-  background:transparent;
+.aisle {
+  background: transparent;
 }
 
-.back-row{
-  margin-top:22px;
+.back-row {
+  margin-top: 22px;
 }
 
-.back-label{
-  text-align:center;
-  font-weight:bold;
-  margin-bottom:8px;
+.back-label {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 8px;
 }
 
-.back-seats{
-  display:grid;
-  grid-template-columns:
-    repeat(6,1fr);
-  gap:7px;
+.back-seats {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 7px;
 }
 
-.poll-option{
-  display:flex;
-  gap:10px;
-  align-items:center;
-  padding:12px;
-  margin-bottom:8px;
-  border:1px solid #dcebe2;
-  border-radius:10px;
-}
+
+/* BUTTONS */
 
 .vote-btn,
-.submit-btn{
-  border:0;
-  background:linear-gradient(
+.submit-btn {
+  border: 0;
+  background: linear-gradient(
     135deg,
     #159957,
     #28b463
   );
-  color:white;
-  padding:14px 24px;
-  border-radius:12px;
-  cursor:pointer;
-  font-size:16px;
-  font-weight:bold;
-  margin-top:12px;
+  color: white;
+  padding: 14px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 12px;
 }
 
-.submit-btn:disabled{
-  opacity:.6;
-  cursor:not-allowed;
+.vote-btn:hover,
+.submit-btn:hover {
+  transform: translateY(-2px);
 }
 
-.chart{
-  margin-top:25px;
+
+/* RESULT */
+
+#result {
+  margin-top: 20px;
+  background: #effff5;
+  border: 2px solid #bce8cc;
+  border-radius: 14px;
+  padding: 20px;
+  display: none;
 }
 
-.bar-row{
-  margin-bottom:14px;
+
+/* POLL */
+
+.poll-option {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 8px;
+  border: 1px solid #dcebe2;
+  border-radius: 10px;
 }
 
-.bar-label{
-  margin-bottom:5px;
-  font-weight:bold;
+
+/* CHART */
+
+.chart {
+  margin-top: 25px;
 }
 
-.bar-bg{
-  background:#e7eeee;
-  border-radius:10px;
-  overflow:hidden;
+.bar-row {
+  margin-bottom: 14px;
 }
 
-.bar{
-  background:linear-gradient(
+.bar-label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.bar-bg {
+  background: #e7eeee;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.bar {
+  background: linear-gradient(
     90deg,
     #159957,
     #38ef7d
   );
-  color:white;
-  padding:7px;
-  transition:width .5s;
+  color: white;
+  padding: 7px;
+  transition: width .5s;
 }
 
-#result{
-  margin-top:20px;
-  background:#effff5;
-  border:2px solid #bce8cc;
-  border-radius:14px;
-  padding:20px;
-  display:none;
+
+/* CHATBOT */
+
+.chatbot {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 330px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 35px #0003;
+  overflow: hidden;
+  z-index: 1000;
 }
 
-.chatbot{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  width:330px;
-  background:white;
-  border-radius:20px;
-  box-shadow:0 10px 35px #0003;
-  overflow:hidden;
-  z-index:1000;
-}
-
-.chat-header{
-  background:linear-gradient(
+.chat-header {
+  background: linear-gradient(
     135deg,
     #159957,
     #38ef7d
   );
-  color:white;
-  padding:15px;
-  font-weight:bold;
+  color: white;
+  padding: 15px;
+  font-weight: bold;
 }
 
-.chat-messages{
-  height:230px;
-  overflow-y:auto;
-  padding:12px;
-  background:#f8fffa;
+.chat-messages {
+  height: 230px;
+  overflow-y: auto;
+  padding: 12px;
+  background: #f8fffa;
 }
 
-.message{
-  padding:9px 11px;
-  border-radius:12px;
-  margin-bottom:8px;
-  max-width:90%;
-  font-size:14px;
+.message {
+  padding: 9px 11px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  max-width: 90%;
+  font-size: 14px;
 }
 
-.bot{
-  background:#e3f8ea;
+.bot {
+  background: #e3f8ea;
 }
 
-.user{
-  background:#dcecff;
-  margin-left:auto;
+.user {
+  background: #dcecff;
+  margin-left: auto;
 }
 
-.chat-input{
-  display:flex;
-  border-top:1px solid #ddd;
+.chat-input {
+  display: flex;
+  border-top: 1px solid #ddd;
 }
 
-.chat-input input{
-  flex:1;
-  border:0;
-  padding:12px;
-  outline:none;
+.chat-input input {
+  flex: 1;
+  border: 0;
+  padding: 12px;
+  outline: none;
 }
 
-.chat-input button{
-  border:0;
-  background:#159957;
-  color:white;
-  padding:0 15px;
-  cursor:pointer;
+.chat-input button {
+  border: 0;
+  background: #159957;
+  color: white;
+  padding: 0 15px;
+  cursor: pointer;
 }
 
-@media(max-width:600px){
 
-  header h1{
-    font-size:28px;
+/* MOBILE */
+
+@media(max-width:600px) {
+
+  header h1 {
+    font-size: 28px;
   }
 
-  .bus-row{
+  .bus-row {
     grid-template-columns:
       1fr 1fr 12px 1fr 1fr 1fr;
   }
 
-  .back-seats{
-    grid-template-columns:
-      repeat(3,1fr);
+  .back-seats {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .chatbot{
-    position:relative;
-    width:calc(100% - 30px);
-    right:auto;
-    bottom:auto;
-    margin:15px;
+  .chatbot {
+    position: relative;
+    width: calc(100% - 30px);
+    right: auto;
+    bottom: auto;
+    margin: 15px;
   }
 
 }
@@ -336,6 +371,8 @@ select{
 <body>
 
 
+<!-- HEADER -->
+
 <header>
 
 <h1>🌿 Dreamland Trip 2026</h1>
@@ -344,19 +381,29 @@ select{
 Our School Fun Day at Dreamland Farm & Resort, Gurugram
 </p>
 
-<span class="badge">🏫 Class 8 F</span>
+<span class="badge">
+🏫 Class 8 F
+</span>
 
-<span class="badge">👥 25 Students</span>
+<span class="badge">
+👥 25 Students
+</span>
 
-<span class="badge">📍 Gurugram</span>
+<span class="badge">
+📍 Gurugram
+</span>
 
-<span class="badge">🚌 School Trip</span>
+<span class="badge">
+🚌 School Trip
+</span>
 
 </header>
 
 
 <div class="container">
 
+
+<!-- CLASS -->
 
 <section class="card">
 
@@ -381,6 +428,8 @@ Another Class
 </section>
 
 
+<!-- NAME -->
+
 <section class="card">
 
 <h2>👋 Your Details</h2>
@@ -398,13 +447,14 @@ Your Name
 </section>
 
 
+<!-- BUS -->
+
 <section class="card">
 
 <h2>🚌 Choose Your Bus Seat</h2>
 
 <p>
-Choose one seat.
-The final 6-seat row is at the very back.
+Choose one seat. The final 6-seat row is at the very back.
 </p>
 
 <div class="bus">
@@ -437,6 +487,8 @@ No seat selected.
 </section>
 
 
+<!-- SNACKS -->
+
 <section class="card">
 
 <h2>🍿 Choose Your Snacks</h2>
@@ -446,9 +498,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="snack"
- value="Chips"
+  type="checkbox"
+  class="snack"
+  value="Chips"
 >
 🍟 Chips
 </label>
@@ -456,9 +508,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="snack"
- value="Kurkure"
+  type="checkbox"
+  class="snack"
+  value="Kurkure"
 >
 🌶️ Kurkure
 </label>
@@ -466,9 +518,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="snack"
- value="Cold Drink"
+  type="checkbox"
+  class="snack"
+  value="Cold Drink"
 >
 🥤 Cold Drink
 </label>
@@ -476,9 +528,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="snack"
- value="Water"
+  type="checkbox"
+  class="snack"
+  value="Water"
 >
 💧 Water
 </label>
@@ -486,9 +538,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="snack"
- value="Chocolate"
+  type="checkbox"
+  class="snack"
+  value="Chocolate"
 >
 🍫 Chocolate
 </label>
@@ -496,9 +548,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="snack"
- value="Biscuits"
+  type="checkbox"
+  class="snack"
+  value="Biscuits"
 >
 🍪 Biscuits
 </label>
@@ -506,9 +558,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="snack"
- value="Popcorn"
+  type="checkbox"
+  class="snack"
+  value="Popcorn"
 >
 🍿 Popcorn
 </label>
@@ -516,9 +568,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="snack"
- value="Candy"
+  type="checkbox"
+  class="snack"
+  value="Candy"
 >
 🍬 Candy
 </label>
@@ -526,9 +578,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="snack"
- value="Samosa"
+  type="checkbox"
+  class="snack"
+  value="Samosa"
 >
 🥟 Samosa
 </label>
@@ -536,9 +588,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="snack"
- value="Sandwich"
+  type="checkbox"
+  class="snack"
+  value="Sandwich"
 >
 🥪 Sandwich
 </label>
@@ -546,9 +598,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="snack"
- value="Cupcake"
+  type="checkbox"
+  class="snack"
+  value="Cupcake"
 >
 🧁 Cupcake
 </label>
@@ -556,9 +608,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="snack"
- value="Cookies"
+  type="checkbox"
+  class="snack"
+  value="Cookies"
 >
 🍪 Cookies
 </label>
@@ -566,9 +618,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="snack"
- value="Juice"
+  type="checkbox"
+  class="snack"
+  value="Juice"
 >
 🧃 Juice
 </label>
@@ -576,9 +628,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="snack"
- value="Fruit"
+  type="checkbox"
+  class="snack"
+  value="Fruit"
 >
 🍎 Fruit
 </label>
@@ -586,9 +638,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="snack"
- value="Muffin"
+  type="checkbox"
+  class="snack"
+  value="Muffin"
 >
 🧁 Muffin
 </label>
@@ -596,9 +648,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="snack"
- value="Namkeen"
+  type="checkbox"
+  class="snack"
+  value="Namkeen"
 >
 🥨 Namkeen
 </label>
@@ -609,6 +661,8 @@ No seat selected.
 </section>
 
 
+<!-- ACTIVITIES -->
+
 <section class="card">
 
 <h2>🎯 Dreamland Activities</h2>
@@ -618,9 +672,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="activityCheck"
- value="Rope Course"
+  type="checkbox"
+  class="activityCheck"
+  value="Rope Course"
 >
 🧗 Rope Course
 </label>
@@ -628,9 +682,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="activityCheck"
- value="Zipline"
+  type="checkbox"
+  class="activityCheck"
+  value="Zipline"
 >
 🪂 Zipline
 </label>
@@ -638,9 +692,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="activityCheck"
- value="Sky Cycling"
+  type="checkbox"
+  class="activityCheck"
+  value="Sky Cycling"
 >
 🚲 Sky Cycling
 </label>
@@ -648,9 +702,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="activityCheck"
- value="Climbing"
+  type="checkbox"
+  class="activityCheck"
+  value="Climbing"
 >
 🧗 Climbing
 </label>
@@ -658,9 +712,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="activityCheck"
- value="Swimming Pool"
+  type="checkbox"
+  class="activityCheck"
+  value="Swimming Pool"
 >
 🏊 Swimming Pool
 </label>
@@ -668,9 +722,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="activityCheck"
- value="Rain Dance"
+  type="checkbox"
+  class="activityCheck"
+  value="Rain Dance"
 >
 💦 Rain Dance
 </label>
@@ -678,9 +732,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="activityCheck"
- value="Archery"
+  type="checkbox"
+  class="activityCheck"
+  value="Archery"
 >
 🏹 Archery
 </label>
@@ -688,9 +742,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="activityCheck"
- value="Dart"
+  type="checkbox"
+  class="activityCheck"
+  value="Dart"
 >
 🎯 Dart
 </label>
@@ -698,9 +752,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="activityCheck"
- value="Ring Toss"
+  type="checkbox"
+  class="activityCheck"
+  value="Ring Toss"
 >
 ⭕ Ring Toss
 </label>
@@ -708,9 +762,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="activityCheck"
- value="Cricket"
+  type="checkbox"
+  class="activityCheck"
+  value="Cricket"
 >
 🏏 Cricket
 </label>
@@ -718,9 +772,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="activityCheck"
- value="Badminton"
+  type="checkbox"
+  class="activityCheck"
+  value="Badminton"
 >
 🏸 Badminton
 </label>
@@ -728,9 +782,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="activityCheck"
- value="Volleyball"
+  type="checkbox"
+  class="activityCheck"
+  value="Volleyball"
 >
 🏐 Volleyball
 </label>
@@ -738,9 +792,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="activityCheck"
- value="Air Hockey"
+  type="checkbox"
+  class="activityCheck"
+  value="Air Hockey"
 >
 🏒 Air Hockey
 </label>
@@ -748,9 +802,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="activityCheck"
- value="Pool"
+  type="checkbox"
+  class="activityCheck"
+  value="Pool"
 >
 🎱 Pool
 </label>
@@ -758,9 +812,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="activityCheck"
- value="Table Tennis"
+  type="checkbox"
+  class="activityCheck"
+  value="Table Tennis"
 >
 🏓 Table Tennis
 </label>
@@ -768,9 +822,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="activityCheck"
- value="Rides"
+  type="checkbox"
+  class="activityCheck"
+  value="Rides"
 >
 🎢 Rides
 </label>
@@ -778,9 +832,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="activityCheck"
- value="Magic Show"
+  type="checkbox"
+  class="activityCheck"
+  value="Magic Show"
 >
 🎩 Magic Show
 </label>
@@ -788,9 +842,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="activityCheck"
- value="Pottery"
+  type="checkbox"
+  class="activityCheck"
+  value="Pottery"
 >
 🏺 Pottery
 </label>
@@ -798,9 +852,9 @@ No seat selected.
 
 <label class="option">
 <input
- type="checkbox"
- class="activityCheck"
- value="Puppet Show"
+  type="checkbox"
+  class="activityCheck"
+  value="Puppet Show"
 >
 🎭 Puppet Show
 </label>
@@ -810,6 +864,8 @@ No seat selected.
 
 </section>
 
+
+<!-- POLL -->
 
 <section class="card">
 
@@ -846,9 +902,16 @@ Vote for what you want the whole group to do!
 </section>
 
 
+<!-- SUBMIT -->
+
 <section class="card">
 
 <h2>✅ Save Your Trip Choices</h2>
+
+<p>
+When you click submit, your choices will be saved
+on this device and shown below.
+</p>
 
 <button
   class="submit-btn"
@@ -865,11 +928,14 @@ Vote for what you want the whole group to do!
 </div>
 
 
+<!-- CHATBOT -->
+
 <div class="chatbot">
 
 <div class="chat-header">
 🤖 Dreamland Trip Assistant
 </div>
+
 
 <div
   class="chat-messages"
@@ -912,13 +978,9 @@ Send
 
 /*
 ====================================================
-GOOGLE APPS SCRIPT URL
+BUS SEATS
 ====================================================
 */
-
-const APPS_SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbw_V10i580yO79mF3qPGr_xL_0odhnWwuUcpLkS8lV6qMsmHu4r20C_7dm34txzgyM/exec";
-
 
 let selectedSeat = null;
 
@@ -926,51 +988,71 @@ let selectedPollOption = "";
 
 
 const regularSeats =
-document.getElementById("regularSeats");
+document.getElementById(
+  "regularSeats"
+);
 
 const backSeats =
-document.getElementById("backSeats");
+document.getElementById(
+  "backSeats"
+);
 
 
-/*
-====================================================
-CREATE SEAT
-====================================================
-*/
-
-function createSeat(number, container){
+function createSeat(
+  number,
+  container
+){
 
   const seat =
-  document.createElement("div");
+    document.createElement(
+      "div"
+    );
 
-  seat.className = "seat";
 
-  seat.innerText = number;
+  seat.className =
+    "seat";
 
-  seat.onclick = function(){
 
-    if(seat.classList.contains("booked")){
-      return;
-    }
+  seat.innerText =
+    number;
 
-    document
-      .querySelectorAll(".seat")
-      .forEach(s =>
-        s.classList.remove("selected")
+
+  seat.onclick =
+    function(){
+
+      document
+        .querySelectorAll(
+          ".seat"
+        )
+        .forEach(
+          s =>
+            s.classList.remove(
+              "selected"
+            )
+        );
+
+
+      seat.classList.add(
+        "selected"
       );
 
-    seat.classList.add("selected");
 
-    selectedSeat = number;
+      selectedSeat =
+        number;
 
-    document.getElementById(
-      "selectedSeatText"
-    ).innerText =
-      "🚌 Your selected seat: " + number;
 
-  };
+      document.getElementById(
+        "selectedSeatText"
+      ).innerText =
+        "🚌 Your selected seat: "
+        + number;
 
-  container.appendChild(seat);
+    };
+
+
+  container.appendChild(
+    seat
+  );
 
 }
 
@@ -981,57 +1063,85 @@ CREATE 30 NORMAL SEATS
 ====================================================
 */
 
-for(let row=0; row<6; row++){
+for(
+  let row = 0;
+  row < 6;
+  row++
+){
 
   const r =
-  document.createElement("div");
+    document.createElement(
+      "div"
+    );
 
-  r.className = "bus-row";
+
+  r.className =
+    "bus-row";
+
 
   createSeat(
-    row*5+1,
+    row * 5 + 1,
     r
   );
 
+
   createSeat(
-    row*5+2,
+    row * 5 + 2,
     r
   );
+
 
   const aisle =
-  document.createElement("div");
+    document.createElement(
+      "div"
+    );
 
-  aisle.className = "aisle";
 
-  r.appendChild(aisle);
+  aisle.className =
+    "aisle";
+
+
+  r.appendChild(
+    aisle
+  );
+
 
   createSeat(
-    row*5+3,
+    row * 5 + 3,
     r
   );
 
+
   createSeat(
-    row*5+4,
+    row * 5 + 4,
     r
   );
 
+
   createSeat(
-    row*5+5,
+    row * 5 + 5,
     r
   );
 
-  regularSeats.appendChild(r);
+
+  regularSeats.appendChild(
+    r
+  );
 
 }
 
 
 /*
 ====================================================
-CREATE BACK ROW 31-36
+BACK ROW
 ====================================================
 */
 
-for(let i=31; i<=36; i++){
+for(
+  let i = 31;
+  i <= 36;
+  i++
+){
 
   createSeat(
     i,
@@ -1043,122 +1153,61 @@ for(let i=31; i<=36; i++){
 
 /*
 ====================================================
-LOAD BOOKED SEATS
-====================================================
-*/
-
-async function loadBookedSeats(){
-
-  try{
-
-    const response =
-      await fetch(
-        APPS_SCRIPT_URL
-      );
-
-    const data =
-      await response.json();
-
-    if(
-      data.success &&
-      Array.isArray(data.bookedSeats)
-    ){
-
-      data.bookedSeats.forEach(
-        seatNumber => {
-
-          document
-            .querySelectorAll(".seat")
-            .forEach(seat => {
-
-              if(
-                String(seat.innerText) ===
-                String(seatNumber)
-              ){
-
-                seat.classList.add(
-                  "booked"
-                );
-
-              }
-
-            });
-
-        }
-      );
-
-    }
-
-  }catch(error){
-
-    console.error(
-      "Could not load booked seats:",
-      error
-    );
-
-  }
-
-}
-
-loadBookedSeats();
-
-
-/*
-====================================================
 POLL
 ====================================================
 */
 
 const votes = {
 
-  "Water Activities":0,
+  "Water Activities": 0,
 
-  "Rope Course / Zipline":0,
+  "Rope Course / Zipline": 0,
 
-  "Sports":0,
+  "Sports": 0,
 
-  "Games":0,
+  "Games": 0,
 
-  "Rides":0,
+  "Rides": 0,
 
-  "Magic Show":0,
+  "Magic Show": 0,
 
-  "Pottery":0,
+  "Pottery": 0,
 
-  "Puppet Show":0
+  "Puppet Show": 0
 
 };
 
 
 const pollOptions =
-document.getElementById(
-  "pollOptions"
-);
+  document.getElementById(
+    "pollOptions"
+  );
 
 
-Object.keys(votes).forEach(
-  option => {
+Object.keys(votes)
+  .forEach(
+    option => {
 
-    pollOptions.innerHTML += `
+      pollOptions.innerHTML += `
 
-      <div class="poll-option">
+        <div class="poll-option">
 
-        <input
-          type="radio"
-          name="poll"
-          value="${option}"
-        >
+          <input
+            type="radio"
+            name="poll"
+            value="${option}"
+          >
 
-        <label>
-          ${option}
-        </label>
+          <label>
+            ${option}
+          </label>
 
-      </div>
+        </div>
 
-    `;
+      `;
 
-  }
-);
+    }
+  );
 
 
 /*
@@ -1174,14 +1223,20 @@ function vote(){
       'input[name="poll"]:checked'
     );
 
+
   const custom =
     document
-      .getElementById("customIdea")
+      .getElementById(
+        "customIdea"
+      )
       .value
       .trim();
 
 
-  if(!selected && !custom){
+  if(
+    !selected &&
+    !custom
+  ){
 
     alert(
       "Please choose an option or write your own idea."
@@ -1194,17 +1249,27 @@ function vote(){
 
   if(custom){
 
-    if(!votes[custom]){
+    if(
+      !votes[custom]
+    ){
+
       votes[custom] = 0;
+
     }
+
 
     votes[custom]++;
 
-    selectedPollOption = custom;
 
-  }else{
+    selectedPollOption =
+      custom;
+
+  }
+
+  else{
 
     votes[selected.value]++;
+
 
     selectedPollOption =
       selected.value;
@@ -1215,9 +1280,9 @@ function vote(){
   drawChart();
 
 
-  document
-    .getElementById("customIdea")
-    .value = "";
+  document.getElementById(
+    "customIdea"
+  ).value = "";
 
 
   document
@@ -1225,7 +1290,8 @@ function vote(){
       'input[name="poll"]'
     )
     .forEach(
-      radio => radio.checked = false
+      radio =>
+        radio.checked = false
     );
 
 
@@ -1238,7 +1304,7 @@ function vote(){
 
 /*
 ====================================================
-DRAW POLL CHART
+DRAW CHART
 ====================================================
 */
 
@@ -1248,6 +1314,7 @@ function drawChart(){
     document.getElementById(
       "chart"
     );
+
 
   chart.innerHTML =
     "<h3>📊 Group Opinion</h3>";
@@ -1260,44 +1327,46 @@ function drawChart(){
     );
 
 
-  Object.keys(votes).forEach(
-    option => {
+  Object.keys(votes)
+    .forEach(
+      option => {
 
-      const percentage =
-        votes[option] /
-        max *
-        100;
+        const percentage =
+          votes[option] /
+          max *
+          100;
 
 
-      chart.innerHTML += `
+        chart.innerHTML += `
 
-        <div class="bar-row">
+          <div class="bar-row">
 
-          <div class="bar-label">
+            <div class="bar-label">
 
-            ${option} —
-            ${votes[option]}
-            vote(s)
-
-          </div>
-
-          <div class="bar-bg">
-
-            <div
-              class="bar"
-              style="width:${percentage}%"
-            >
+              ${option} —
               ${votes[option]}
+              vote(s)
+
+            </div>
+
+
+            <div class="bar-bg">
+
+              <div
+                class="bar"
+                style="width:${percentage}%"
+              >
+                ${votes[option]}
+              </div>
+
             </div>
 
           </div>
 
-        </div>
+        `;
 
-      `;
-
-    }
-  );
+      }
+    );
 
 }
 
@@ -1311,7 +1380,7 @@ SUBMIT FORM
 ====================================================
 */
 
-async function submitForm(){
+function submitForm(){
 
   const name =
     document
@@ -1352,51 +1421,6 @@ async function submitForm(){
   }
 
 
-  /*
-  ----------------------------------------
-  CHECK WHETHER SEAT WAS ALREADY BOOKED
-  ----------------------------------------
-  */
-
-  const selectedSeatElement =
-    Array.from(
-      document.querySelectorAll(".seat")
-    ).find(
-      seat =>
-        String(seat.innerText) ===
-        String(selectedSeat)
-    );
-
-
-  if(
-    selectedSeatElement &&
-    selectedSeatElement.classList.contains(
-      "booked"
-    )
-  ){
-
-    alert(
-      "❌ This seat has already been booked. Please choose another seat."
-    );
-
-    selectedSeat = null;
-
-    document.getElementById(
-      "selectedSeatText"
-    ).innerText =
-      "No seat selected.";
-
-    return;
-
-  }
-
-
-  /*
-  ----------------------------------------
-  GET SNACKS
-  ----------------------------------------
-  */
-
   const snacks =
     Array.from(
       document.querySelectorAll(
@@ -1406,12 +1430,6 @@ async function submitForm(){
       item => item.value
     );
 
-
-  /*
-  ----------------------------------------
-  GET ACTIVITIES
-  ----------------------------------------
-  */
 
   const activities =
     Array.from(
@@ -1423,12 +1441,6 @@ async function submitForm(){
     );
 
 
-  /*
-  ----------------------------------------
-  GET GROUP VOTE
-  ----------------------------------------
-  */
-
   const groupVote =
     selectedPollOption ||
     "Not selected";
@@ -1436,11 +1448,11 @@ async function submitForm(){
 
   /*
   ----------------------------------------
-  CREATE DATA
+  SAVE ON THIS DEVICE
   ----------------------------------------
   */
 
-  const formData = {
+  const tripData = {
 
     name: name,
 
@@ -1448,190 +1460,156 @@ async function submitForm(){
 
     busSeat: selectedSeat,
 
-    snacks: snacks.join(", "),
+    snacks: snacks,
 
-    activities:
-      activities.join(", "),
+    activities: activities,
 
-    groupVote: groupVote
+    groupVote: groupVote,
+
+    savedAt:
+      new Date().toLocaleString()
 
   };
 
 
-  console.log(
-    "Submitting data:",
-    formData
+  localStorage.setItem(
+    "dreamlandTripData",
+    JSON.stringify(
+      tripData
+    )
   );
 
 
   /*
   ----------------------------------------
-  DISABLE BUTTON
+  SHOW RESULT
   ----------------------------------------
   */
 
-  const submitButton =
-    document.querySelector(
-      ".submit-btn"
+  const result =
+    document.getElementById(
+      "result"
     );
 
 
-  submitButton.disabled = true;
+  result.style.display =
+    "block";
 
-  submitButton.innerText =
-    "⏳ Saving...";
+
+  result.innerHTML = `
+
+    <h3>
+      🎉 Trip Choices Saved!
+    </h3>
+
+    <p>
+      <strong>Name:</strong>
+      ${name}
+    </p>
+
+    <p>
+      <strong>Class:</strong>
+      ${cls}
+    </p>
+
+    <p>
+      <strong>Bus Seat:</strong>
+      ${selectedSeat}
+    </p>
+
+    <p>
+      <strong>Snacks:</strong>
+      ${
+        snacks.length
+        ? snacks.join(", ")
+        : "None selected"
+      }
+    </p>
+
+    <p>
+      <strong>Activities:</strong>
+      ${
+        activities.length
+        ? activities.join(", ")
+        : "None selected"
+      }
+    </p>
+
+    <p>
+      <strong>Group Opinion:</strong>
+      ${groupVote}
+    </p>
+
+    <p>
+      <strong>Saved:</strong>
+      ${tripData.savedAt}
+    </p>
+
+    <hr>
+
+    <p>
+      🌿 Have an amazing
+      Dreamland Trip 2026!
+    </p>
+
+  `;
+
+
+  result.scrollIntoView({
+    behavior: "smooth"
+  });
+
+
+  alert(
+    "✅ Your trip choices have been saved on this device!"
+  );
+
+}
+
+
+/*
+====================================================
+LOAD PREVIOUS DATA
+====================================================
+*/
+
+function loadPreviousData(){
+
+  const saved =
+    localStorage.getItem(
+      "dreamlandTripData"
+    );
+
+
+  if(!saved){
+    return;
+  }
 
 
   try{
 
-
-    /*
-    ----------------------------------------
-    SEND TO GOOGLE APPS SCRIPT
-    ----------------------------------------
-    */
-
-    await fetch(
-      APPS_SCRIPT_URL,
-      {
-
-        method:"POST",
-
-        mode:"no-cors",
-
-        headers:{
-          "Content-Type":
-            "text/plain;charset=utf-8"
-        },
-
-        body:
-          JSON.stringify(formData)
-
-      }
-    );
+    const data =
+      JSON.parse(saved);
 
 
-    /*
-    ----------------------------------------
-    SHOW SUCCESS
-    ----------------------------------------
-    */
-
-    const result =
-      document.getElementById(
-        "result"
-      );
-
-
-    result.style.display =
-      "block";
-
-
-    result.innerHTML = `
-
-      <h3>
-        🎉 Trip Choices Saved!
-      </h3>
-
-      <p>
-        <strong>Name:</strong>
-        ${name}
-      </p>
-
-      <p>
-        <strong>Class:</strong>
-        ${cls}
-      </p>
-
-      <p>
-        <strong>Bus Seat:</strong>
-        ${selectedSeat}
-      </p>
-
-      <p>
-        <strong>Snacks:</strong>
-        ${
-          snacks.length
-          ? snacks.join(", ")
-          : "None selected"
-        }
-      </p>
-
-      <p>
-        <strong>Activities:</strong>
-        ${
-          activities.length
-          ? activities.join(", ")
-          : "None selected"
-        }
-      </p>
-
-      <p>
-        <strong>Group Opinion:</strong>
-        ${groupVote}
-      </p>
-
-      <p>
-        🌿 Have an amazing
-        Dreamland Trip 2026!
-      </p>
-
-    `;
-
-
-    result.scrollIntoView({
-      behavior:"smooth"
-    });
-
-
-    alert(
-      "✅ Your trip choices have been submitted!"
-    );
-
-
-    /*
-    ----------------------------------------
-    MARK SEAT AS BOOKED LOCALLY
-    ----------------------------------------
-    */
-
-    if(selectedSeatElement){
-
-      selectedSeatElement.classList.remove(
-        "selected"
-      );
-
-      selectedSeatElement.classList.add(
-        "booked"
-      );
-
-    }
+    document.getElementById(
+      "studentName"
+    ).value =
+      data.name || "";
 
 
   }catch(error){
 
-    console.error(
-      "Submission error:",
-      error
+    console.log(
+      "No previous data available."
     );
-
-
-    alert(
-      "❌ There was a problem sending your choices. Please try again."
-    );
-
-
-  }finally{
-
-    submitButton.disabled =
-      false;
-
-    submitButton.innerText =
-      "🚀 Submit My Choices";
 
   }
 
 }
+
+
+loadPreviousData();
 
 
 /*
@@ -1703,7 +1681,7 @@ function sendMessage(){
 
 
   setTimeout(
-    () => {
+    function(){
 
       const x =
         question.toLowerCase();
@@ -1736,7 +1714,8 @@ function sendMessage(){
 
 
       else if(
-        x.includes("activity")
+        x.includes("activity") ||
+        x.includes("activities")
       ){
 
         answer =
@@ -1761,7 +1740,17 @@ function sendMessage(){
       ){
 
         answer =
-          "🏫 The planner has Class 8 F and Another Class, with space for about 25 students per class.";
+          "🏫 The planner currently has Class 8 F and Another Class.";
+
+      }
+
+
+      else if(
+        x.includes("dreamland")
+      ){
+
+        answer =
+          "🌿 Dreamland Farm & Resort is the destination for our school fun day in Gurugram.";
 
       }
 
@@ -1778,6 +1767,7 @@ function sendMessage(){
 }
 
 </script>
+
 
 </body>
 
